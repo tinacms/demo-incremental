@@ -32,14 +32,61 @@ const config = defineConfig({
   schema: {
     collections: [
       {
+        label: "Pages",
+        name: "page",
+        path: "content/pages",
+        ui: {
+          // router: ({ document }) => {
+          //   if (document._sys.filename === "home") {
+          //     return `/`;
+          //   }
+          //   if (document._sys.filename === "about") {
+          //     return `/about`;
+          //   }
+          //   return undefined;
+          // },
+        },
+        fields: [
+          {
+            type: "string",
+            label: "Title",
+            name: "title",
+            description:
+              "The title of the page. This is used to display the title in the CMS",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "object",
+            list: true,
+            name: "blocks",
+            label: "Sections",
+            ui: {
+              visualSelector: true,
+            },
+            templates: [
+              heroBlockSchema,
+              // @ts-ignore
+              featureBlockSchema,
+              contentBlockSchema,
+              testimonialBlockSchema,
+            ],
+          },
+        ],
+      },
+      {
         label: "Blog Posts",
         name: "post",
         path: "content/posts",
         format: "mdx",
         ui: {
-          router: ({ document }) => {
-            return `/posts/${document._sys.filename}`;
-          },
+          // router: ({ document }) => {
+          //   if (document._sys.filename === "voteForPedro") {
+          //     return undefined;
+          //   } else {
+          //     return `/posts/${document._sys.filename}`;
+          //   }
+          // }
         },
         fields: [
           {
@@ -146,7 +193,27 @@ const config = defineConfig({
         ],
       },
       {
-        label: "Global",
+        label: "Authors",
+        name: "author",
+        path: "content/authors",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            label: "Name",
+            name: "name",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            label: "Avatar",
+            name: "avatar",
+          },
+        ],
+      },
+      {
+        label: "Site Settings",
         name: "global",
         path: "content/global",
         format: "json",
@@ -298,69 +365,6 @@ const config = defineConfig({
                   },
                 ],
               },
-            ],
-          },
-        ],
-      },
-      {
-        label: "Authors",
-        name: "author",
-        path: "content/authors",
-        format: "md",
-        fields: [
-          {
-            type: "string",
-            label: "Name",
-            name: "name",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            label: "Avatar",
-            name: "avatar",
-          },
-        ],
-      },
-      {
-        label: "Pages",
-        name: "page",
-        path: "content/pages",
-        ui: {
-          router: ({ document }) => {
-            if (document._sys.filename === "home") {
-              return `/`;
-            }
-            if (document._sys.filename === "about") {
-              return `/about`;
-            }
-            return undefined;
-          },
-        },
-        fields: [
-          {
-            type: "string",
-            label: "Title",
-            name: "title",
-            description:
-              "The title of the page. This is used to display the title in the CMS",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "object",
-            list: true,
-            name: "blocks",
-            label: "Sections",
-            ui: {
-              visualSelector: true,
-            },
-            templates: [
-              heroBlockSchema,
-              // @ts-ignore
-              featureBlockSchema,
-              contentBlockSchema,
-              testimonialBlockSchema,
             ],
           },
         ],

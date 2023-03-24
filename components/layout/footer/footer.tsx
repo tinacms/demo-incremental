@@ -43,92 +43,13 @@ export const Footer = ({ data, icon, rawData }) => {
       : footerColor.default;
 
   return (
-    <footer className={`bg-gradient-to-br ${footerColorCss}`}>
+    <footer>
       <Container className="relative" size="small">
-        <div className="flex justify-between items-center gap-6 flex-wrap">
-          <Link href="/" passHref>
-            <a className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-50 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap">
-              <Icon
-                parentColor={data.color}
-                data={{
-                  name: icon.name,
-                  color: data.color === "primary" ? "primary" : icon.color,
-                  style: icon.style,
-                }}
-                className="inline-block h-10 w-auto group-hover:text-orange-500"
-              />
-            </a>
-          </Link>
-          <div className="flex gap-4">
-            {data.social && data.social.facebook && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.facebook}
-                target="_blank"
-              >
-                <FaFacebookF
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {data.social && data.social.twitter && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.twitter}
-                target="_blank"
-              >
-                <FaTwitter
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {data.social && data.social.instagram && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.instagram}
-                target="_blank"
-              >
-                <AiFillInstagram
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {data.social && data.social.github && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={data.social.github}
-                target="_blank"
-              >
-                <FaGithub
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      data.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-          </div>
-          <RawRenderer parentColor={data.color} rawData={rawData} />
+        <div className="text-center text-gray-400 p-10">
+          TinaCMS Demo Site
         </div>
-        <div
-          className={`absolute h-1 bg-gradient-to-r from-transparent ${
-            data.color === "primary" ? `via-white` : `via-black dark:via-white`
-          } to-transparent top-0 left-4 right-4 opacity-5`}
-        ></div>
+        <RawRenderer parentColor={data.color} rawData={rawData} />
       </Container>
-    </footer>
+    </footer >
   );
 };
