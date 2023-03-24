@@ -1,7 +1,7 @@
 ---
 title: Homepage
 blocks:
-  - headline: Next.js + TinaCMS
+  - headline: Welcome
     text: |
       This project is set up to show you the basics of working with Tina.
     actions:
@@ -13,13 +13,9 @@ blocks:
       src: /uploads/002Blog_Premium CPU-Optimized Droplets.jpg
     color: default
     _template: hero
-  - body: >
-      Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu
-      leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec
-      sed odio dui.
-    color: default
-    _template: content
 ---
+
+
 
 
 
