@@ -40,15 +40,15 @@ const config = defineConfig({
         name: "page",
         path: "content/pages",
         ui: {
-          router: ({ document }) => {
-            if (document._sys.filename === "home") {
-              return `/`;
-            }
-            if (document._sys.filename === "about") {
-              return `/about`;
-            }
-            return undefined;
-          },
+          // router: ({ document }) => {
+          //   if (document._sys.filename === "home") {
+          //     return `/`;
+          //   }
+          //   if (document._sys.filename === "about") {
+          //     return `/about`;
+          //   }
+          //   return undefined;
+          // },
         },
         fields: [
           {
@@ -84,9 +84,9 @@ const config = defineConfig({
         path: "content/posts",
         format: "mdx",
         ui: {
-          router: ({ document }) => {
-            return `/posts/${document._sys.filename}`;
-          }
+          // router: ({ document }) => {
+          //   return `/posts/${document._sys.filename}`;
+          // }
         },
         fields: [
           {
