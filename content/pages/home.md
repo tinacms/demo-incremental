@@ -1,7 +1,7 @@
 ---
 title: Homepage
 blocks:
-  - headline: Welcome to the Tina Starter
+  - headline: Next.js + TinaCMS
     text: |
       This project is set up to show you the basics of working with Tina.
     actions:
@@ -20,6 +20,8 @@ blocks:
     color: default
     _template: content
 ---
+
+
 
 
 
