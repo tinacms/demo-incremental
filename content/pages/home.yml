@@ -1,0 +1,14 @@
+title: Homepage
+blocks:
+  - headline: Welcome
+    text: |
+      This project is set up to show you the basics of working with Tina.
+    actions:
+      - label: Get Started
+        type: button
+        icon: true
+        link: /posts
+    image:
+      src: /uploads/002Blog_Premium CPU-Optimized Droplets.jpg
+    color: default
+    _template: hero
