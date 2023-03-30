@@ -41,12 +41,12 @@ const config = defineConfig({
         path: "content/pages",
         format: "yml",
         ui: {
-          // router: ({ document }) => {
-          //   if (document._sys.filename === "home") {
-          //     return `/`;
-          //   }
-          //   return undefined;
-          // },
+          router: ({ document }) => {
+            if (document._sys.filename === "home") {
+              return `/`;
+            }
+            return undefined;
+          },
         },
         fields: [
           {
