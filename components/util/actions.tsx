@@ -86,8 +86,8 @@ export const Actions = ({
             element = (
               <Link key={index} href={action.link ? action.link : "/"} passHref>
                 <a
-                  data-tinafield={`${parentField}.${index}.label`}
-                  // data-tina-field={tinaField(action, "label")}
+                  // data-tinafield={`${parentField}.${index}.label`}
+                  data-tina-field={tinaField(action, "label")}
                   className={`group inline-flex items-center font-semibold text-lg transition duration-150 ease-out ${parentColor === "primary"
                     ? `text-white  hover:text-gray-50`
                     : linkButtonColorClasses[theme.color]

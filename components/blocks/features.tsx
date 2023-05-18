@@ -30,7 +30,7 @@ export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
       )}
       {data.text && (
         <p
-          data-tinafield={`${tinaField}.text`}
+          // data-tinafield={`${tinaField}.text`}
           data-tina-field={tinaFieldHelper(data, "text")}
           className="text-base opacity-80 leading-relaxed"
         >
@@ -39,7 +39,7 @@ export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
       )}
       {data.actions && (
         <Actions
-          data-tinafield={`${tinaField}.actions`}
+          // data-tinafield={`${tinaField}.actions`}
           parentField={`${parentField}.actions`}
           className="justify-center lg:justify-start py-2"
           parentColor={data.color}
