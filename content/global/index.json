@@ -5,18 +5,8 @@
       "color": "orange",
       "style": "float"
     },
-    "name": "Tina Demo",
-    "color": "default",
-    "nav": [
-      {
-        "href": "",
-        "label": "Home"
-      },
-      {
-        "href": "posts",
-        "label": "Blog"
-      }
-    ]
+    "name": "Demo",
+    "color": "default"
   },
   "footer": {
     "color": "default",

@@ -41,11 +41,10 @@ export const Hero = ({ data, parentField }) => {
               className={`w-full relative	mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
-                  data.color === "primary"
+                className={`bg-clip-text text-transparent bg-gradient-to-r  ${data.color === "primary"
                     ? `from-white to-gray-100`
                     : headlineColorClasses[theme.color]
-                }`}
+                  }`}
               >
                 {data.headline}
               </span>
@@ -54,9 +53,8 @@ export const Hero = ({ data, parentField }) => {
           {data.text && (
             <div
               data-tinafield={`${parentField}.text`}
-              className={`prose prose-lg mx-auto lg:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-              }`}
+              className={`prose prose-lg mx-auto lg:mx-0 mb-10 ${data.color === "primary" ? `prose-primary` : `dark:prose-dark`
+                }`}
             >
               <TinaMarkdown content={data.text} />
             </div>

@@ -1,14 +1,42 @@
 title: Homepage
 blocks:
-  - headline: Welcome
-    text: |
-      This project is set up to show you the basics of working with Tina.
-    actions:
-      - label: Get Started
-        type: button
-        icon: true
-        link: /posts
-    image:
-      src: /uploads/002Blog_Premium CPU-Optimized Droplets.jpg
-    color: default
-    _template: hero
+  - items:
+      - icon:
+          name: ''
+          color: ''
+          style: float
+        title: Lightning Fast
+        text: >-
+          This is where you might talk about the feature, if this wasn't just
+          filler text.
+        actions:
+          - label: Learn More
+            type: link
+            icon: true
+            link: /
+      - icon:
+          name: ''
+          color: ''
+          style: float
+        title: 100% Relialbe
+        text: >-
+          This is where you might talk about the feature, if this wasn't just
+          filler text.
+        actions:
+          - label: 'Get started '
+            type: link
+            icon: true
+            link: /
+      - icon:
+          color: ''
+          style: float
+        title: Built to Last
+        text: >-
+          This is where you might talk about the feature, if this wasn't just
+          filler text.
+        actions:
+          - label: Action Label
+            type: link
+            icon: true
+            link: /
+    _template: features

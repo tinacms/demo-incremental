@@ -4,7 +4,7 @@ import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import { iconSchema } from "../util/icon";
 
-export const Feature = ({ featuresColor, data, tinaField }) => {
+export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
   return (
     <div
       data-tinafield={tinaField}
@@ -34,7 +34,15 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
           {data.text}
         </p>
       )}
-      {data.actions && <Actions actions={data.actions} />}
+      {data.actions && (
+        <Actions
+          data-tinafield={`${tinaField}.actions`}
+          parentField={`${parentField}.actions`}
+          className="justify-center lg:justify-start py-2"
+          parentColor={data.color}
+          actions={data.actions}
+        />
+      )}
     </div>
   );
 };
@@ -77,6 +85,10 @@ export const featureBlockSchema = {
   label: "Features",
   ui: {
     previewSrc: "/blocks/features.png",
+    itemProps: (item) => {
+      // Field values are accessed by item?.<Field name>
+      return { label: item?.title };
+    },
     defaultItem: {
       items: [defaultFeature, defaultFeature, defaultFeature],
     },
@@ -111,6 +123,47 @@ export const featureBlockSchema = {
           ui: {
             component: "textarea",
           },
+        },
+        {
+          label: "Actions",
+          name: "actions",
+          type: "object",
+          list: true,
+          ui: {
+            defaultItem: {
+              label: "Action Label",
+              type: "button",
+              icon: true,
+              link: "/",
+            },
+            itemProps: (item) => ({ label: item.label }),
+          },
+          fields: [
+            {
+              label: "Label",
+              name: "label",
+              type: "string",
+            },
+            {
+              label: "Type",
+              name: "type",
+              type: "string",
+              options: [
+                { label: "Button", value: "button" },
+                { label: "Link", value: "link" },
+              ],
+            },
+            {
+              label: "Icon",
+              name: "icon",
+              type: "boolean",
+            },
+            {
+              label: "Link",
+              name: "link",
+              type: "string",
+            },
+          ],
         },
       ],
     },
