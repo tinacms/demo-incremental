@@ -3,6 +3,7 @@ import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { Icon } from "../util/icon";
 import { iconSchema } from "../util/icon";
+import { tinaField as tinaFieldHelper } from "tinacms/dist/react";
 
 export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
   return (
@@ -21,6 +22,7 @@ export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
       {data.title && (
         <h3
           data-tinafield={`${tinaField}.title`}
+          // data-tina-field={tinaFieldHelper(data, "title")}
           className="text-2xl font-semibold title-font"
         >
           {data.title}
@@ -29,6 +31,7 @@ export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
       {data.text && (
         <p
           data-tinafield={`${tinaField}.text`}
+          // data-tina-field={tinaFieldHelper(data, "text")}
           className="text-base opacity-80 leading-relaxed"
         >
           {data.text}
@@ -59,6 +62,7 @@ export const Features = ({ data, parentField }) => {
             return (
               <Feature
                 tinaField={`${parentField}.items.${i}`}
+                parentField={`${parentField}.items.${i}`}
                 featuresColor={data.color}
                 key={i}
                 data={block}
