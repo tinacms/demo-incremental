@@ -21,8 +21,8 @@ export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
       )}
       {data.title && (
         <h3
-          data-tinafield={`${tinaField}.title`}
-          // data-tina-field={tinaFieldHelper(data, "title")}
+          // data-tinafield={`${tinaField}.title`}
+          data-tina-field={tinaFieldHelper(data, "title")}
           className="text-2xl font-semibold title-font"
         >
           {data.title}
@@ -31,7 +31,7 @@ export const Feature = ({ featuresColor, data, parentField, tinaField }) => {
       {data.text && (
         <p
           data-tinafield={`${tinaField}.text`}
-          // data-tina-field={tinaFieldHelper(data, "text")}
+          data-tina-field={tinaFieldHelper(data, "text")}
           className="text-base opacity-80 leading-relaxed"
         >
           {data.text}

@@ -2,8 +2,6 @@ title: Homepage
 blocks:
   - items:
       - icon:
-          name: ''
-          color: ''
           style: float
         title: Lightning Fast
         text: >-
@@ -15,27 +13,24 @@ blocks:
             icon: true
             link: /
       - icon:
-          name: ''
-          color: ''
           style: float
         title: 100% Relialbe
         text: >-
           This is where you might talk about the feature, if this wasn't just
           filler text.
         actions:
-          - label: 'Get started '
+          - label: Learn More
             type: link
             icon: true
             link: /
       - icon:
-          color: ''
           style: float
         title: Built to Last
         text: >-
           This is where you might talk about the feature, if this wasn't just
           filler text.
         actions:
-          - label: Action Label
+          - label: Learn More
             type: link
             icon: true
             link: /
